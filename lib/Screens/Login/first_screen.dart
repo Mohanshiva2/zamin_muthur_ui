@@ -19,8 +19,8 @@ class _FirstScreenState extends State<FirstScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.blueAccent,Color(0xffE5E5E5)],
-              begin: Alignment.topLeft,
+              colors: [Color(0xffE1F1FC),Color(0xffFFF2DF)],
+              begin: Alignment.topRight,
               end: Alignment.bottomRight
           ),
         ),

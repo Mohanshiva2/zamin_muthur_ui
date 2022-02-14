@@ -17,7 +17,14 @@ class _StreetPageState extends State<StreetPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        color: Color(0xffF3F0FF),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Color(0xffE1F1FC),Color(0xffFFF2DF)],
+              begin: Alignment.topRight,
+
+              end: Alignment.bottomRight
+          ),
+        ),
         padding: EdgeInsets.all(10),
         width: double.infinity,
         child: Stack(
@@ -82,7 +89,7 @@ class _StreetPageState extends State<StreetPage> {
                   children: [
                     TextField(
                       decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(25),
+                          contentPadding: EdgeInsets.all(20),
                           hintText: 'Search...',
                           filled: true,
                           fillColor: Color(0xffFBF8FF),
@@ -110,8 +117,8 @@ class _StreetPageState extends State<StreetPage> {
                   ],
                 ),
               ),
-              top: size.height*0.58,
-              right: -size.width*0.02,
+              top: size.height*0.55,
+              right: -size.width*0.05,
             ),
             Positioned(
               child: GestureDetector(

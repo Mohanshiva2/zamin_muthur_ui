@@ -15,7 +15,13 @@ class _PasswordPageState extends State<PasswordPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        color: Color(0xffF3F0FF),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Color(0xffE1F1FC),Color(0xffFFF2DF)],
+              begin: Alignment.topRight,
+              end: Alignment.bottomRight
+          ),
+        ),
         padding: EdgeInsets.all(13),
         width: double.infinity,
         child: Stack(
@@ -69,15 +75,17 @@ class _PasswordPageState extends State<PasswordPage> {
                 child: Column(
                   children: [
                     TextField(
+                      keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(25),
-                          hintText: 'Mobile number',
+                          contentPadding: EdgeInsets.all(20),
+                          hintText: 'One time Password',
                           filled: true,
                           fillColor: Color(0xffFBF8FF),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
                             borderSide: BorderSide.none,
-                          )),
+                          ),
+                      ),
                     ),
                   ],
                 ),

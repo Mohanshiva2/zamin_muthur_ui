@@ -15,7 +15,13 @@ class _MobileNumberPageState extends State<MobileNumberPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        color: Color(0xffF3F0FF),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Color(0xffE1F1FC),Color(0xffFFF2DF)],
+              begin: Alignment.topRight,
+              end: Alignment.bottomRight
+          ),
+        ),
         padding: EdgeInsets.all(15),
         width: double.infinity,
         child: Stack(
@@ -28,12 +34,13 @@ class _MobileNumberPageState extends State<MobileNumberPage> {
                     // width: size.width * 0.8,
                     child: Image.asset(
                       "assets/Saly-2.png",
+                      scale: 2.5,
                     ),
                   ),
                 ],
               ),
-              left: size.width * 0.193,
-              right: -size.width * 0.1,
+              left: size.width * 0.300,
+              // right: -size.width * 0.9,
               top: size.height * 0.01,
             ),
             Positioned(
@@ -63,6 +70,7 @@ class _MobileNumberPageState extends State<MobileNumberPage> {
             ),
             Positioned(
               child: Container(
+
                 width: size.width * 0.8,
                 height: size.height * 0.08,
                 decoration: BoxDecoration(
@@ -77,8 +85,9 @@ class _MobileNumberPageState extends State<MobileNumberPage> {
                 child: Column(
                   children: [
                     TextField(
+                      keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(25),
+                          contentPadding: EdgeInsets.all(20),
                           hintText: 'Mobile number',
                           filled: true,
                           fillColor: Color(0xffFBF8FF),
