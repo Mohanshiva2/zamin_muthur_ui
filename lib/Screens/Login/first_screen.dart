@@ -18,10 +18,9 @@ class _FirstScreenState extends State<FirstScreen> {
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xffE1F1FC),Color(0xffFFF2DF)],
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight
+          gradient: RadialGradient(
+              colors: [Color(0xffE1F1FC),Color(0xffF8F0FE)],
+              center: Alignment(0.5,-0.5)
           ),
         ),
         child: Column(

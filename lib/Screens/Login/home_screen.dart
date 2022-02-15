@@ -20,10 +20,9 @@ class _HomePageState extends State<HomePage> {
             left: size.width * 0.03,
             right: size.width * 0.03),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xffE1F1FC),Color(0xffFFF2DF)],
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight
+          gradient: RadialGradient(
+              colors: [Color(0xffE1F1FC),Color(0xffF8F0FE)],
+              center: Alignment(0.5,-0.5)
           ),
         ),
         child: Column(
@@ -75,8 +74,7 @@ class _HomePageState extends State<HomePage> {
             Center(
               child: Container(
                 padding: EdgeInsets.only(
-                    left: size.width * 0.030,
-                    right: size.width * 0.1),
+                    left: size.width * 0.030, right: size.width * 0.1),
                 height: size.height * 0.18,
                 width: size.width * 0.8,
                 decoration: BoxDecoration(
@@ -102,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                         "23\nmins",
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: size.height * 0.025,
+                            fontSize: size.height * 0.020,
                             color: Colors.white),
                       ),
                     ),
@@ -160,8 +158,8 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     "Lorem ipsum",
                     style: TextStyle(
-                        fontSize: size.height * 0.017,
-                        color: Color(0xffBBBBBB),
+                      fontSize: size.height * 0.017,
+                      color: Color(0xffBBBBBB),
                     ),
                   ),
                 ),
@@ -185,8 +183,8 @@ class _HomePageState extends State<HomePage> {
                       height: size.height * 0.20,
                       width: size.width * 0.3,
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -232,8 +230,8 @@ class _HomePageState extends State<HomePage> {
                       height: size.height * 0.16,
                       width: size.width * 0.3,
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -263,9 +261,11 @@ class _HomePageState extends State<HomePage> {
                       height: size.height * 0.08,
                       width: size.width * 0.2,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          gradient: LinearGradient(
-                              colors: [Color(0xff8949E9), Color(0xff6324BB)],),),
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          colors: [Color(0xff8949E9), Color(0xff6324BB)],
+                        ),
+                      ),
                       child: Center(
                         child: Image.asset(
                           'assets/Vector (5).png',
@@ -292,9 +292,11 @@ class _HomePageState extends State<HomePage> {
                       height: size.height * 0.08,
                       width: size.width * 0.2,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          gradient: LinearGradient(
-                              colors: [Color(0xff8949E9), Color(0xff6324BB)],),),
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          colors: [Color(0xff8949E9), Color(0xff6324BB)],
+                        ),
+                      ),
                       child: Center(
                         child: Image.asset(
                           'assets/Vector (6).png',
@@ -321,9 +323,14 @@ class _HomePageState extends State<HomePage> {
                       height: size.height * 0.08,
                       width: size.width * 0.2,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          gradient: LinearGradient(
-                              colors: [Color(0xff8949E9), Color(0xff6324BB)],),),
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xff8949E9),
+                            Color(0xff6324BB),
+                          ],
+                        ),
+                      ),
                       child: Center(
                         child: Image.asset(
                           'assets/Vector (7).png',

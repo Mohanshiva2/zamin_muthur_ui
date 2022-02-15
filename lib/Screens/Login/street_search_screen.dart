@@ -18,11 +18,9 @@ class _StreetPageState extends State<StreetPage> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xffE1F1FC),Color(0xffFFF2DF)],
-              begin: Alignment.topRight,
-
-              end: Alignment.bottomRight
+          gradient: RadialGradient(
+              colors: [Color(0xffE1F1FC),Color(0xffF8F0FE)],
+              center: Alignment(0.5,-0.5)
           ),
         ),
         padding: EdgeInsets.all(10),

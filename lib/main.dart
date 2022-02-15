@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:zamin_muthur_ui/Screens/Login/mobilenumber_screen.dart';
+import 'package:zamin_muthur_ui/test_screen.dart';
 
-import 'Screens/Login/first_screen.dart';
-import 'Screens/Login/passwors_screen.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,16 +27,14 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-
     super.initState();
-
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FirstScreen(),
+      home: HomePage(),
     );
   }
 }

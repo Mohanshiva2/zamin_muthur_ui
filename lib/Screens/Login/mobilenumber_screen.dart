@@ -14,12 +14,13 @@ class _MobileNumberPageState extends State<MobileNumberPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Color(0xffFFF2DF),
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xffE1F1FC),Color(0xffFFF2DF)],
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight
+          gradient: RadialGradient(
+            colors: [Color(0xffE1F1FC),Color(0xffF8F0FE),],
+            center: Alignment(0.5, -0.5),
+            radius: 0.9
           ),
         ),
         padding: EdgeInsets.all(15),
@@ -30,6 +31,23 @@ class _MobileNumberPageState extends State<MobileNumberPage> {
               child: Stack(
                 children: [
                   Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(300),
+                      // gradient: LinearGradient(
+                      //     colors: [Color(0xffE1F1FC),Color(0xffE1F1FC)],
+                      //     begin: Alignment.center,
+                      //     end: Alignment.center,
+                      //   tileMode: TileMode.mirror
+                      // ),
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //     color: Color(0xffE1F1FC),
+                      //     blurRadius: 100,
+                      //     offset: Offset(1.0,-1.0),
+                      //     spreadRadius: 5,
+                      //   )
+                      // ]
+                    ),
                     // height: size.height * 0.4,
                     // width: size.width * 0.8,
                     child: Image.asset(
