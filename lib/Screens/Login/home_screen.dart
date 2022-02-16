@@ -183,7 +183,15 @@ class _HomePageState extends State<HomePage> {
                       height: size.height * 0.20,
                       width: size.width * 0.3,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color(0xffFBF8FF),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(1.0,0.0),
+                            spreadRadius: 1,
+                            blurRadius: 1
+                          )
+                        ],
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
@@ -208,6 +216,14 @@ class _HomePageState extends State<HomePage> {
                       width: size.width * 0.3,
                       decoration: BoxDecoration(
                           color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black12,
+                                offset: Offset(1.0,0.0),
+                                spreadRadius: 1,
+                                blurRadius: 1
+                            )
+                          ],
                           borderRadius: BorderRadius.circular(20)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -231,6 +247,14 @@ class _HomePageState extends State<HomePage> {
                       width: size.width * 0.3,
                       decoration: BoxDecoration(
                         color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(1.0,0.0),
+                              spreadRadius: 1,
+                              blurRadius: 1
+                          )
+                        ],
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
