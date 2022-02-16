@@ -17,9 +17,8 @@ class _PasswordPageState extends State<PasswordPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
-              colors: [Color(0xffE1F1FC),Color(0xffF8F0FE)],
-              center: Alignment(0.5,-0.5)
-          ),
+              colors: [Color(0xffE1F1FC), Color(0xffF8F0FE)],
+              center: Alignment(0.5, -0.5)),
         ),
         padding: EdgeInsets.all(13),
         width: double.infinity,

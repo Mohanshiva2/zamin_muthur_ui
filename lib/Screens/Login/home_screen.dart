@@ -21,9 +21,8 @@ class _HomePageState extends State<HomePage> {
             right: size.width * 0.03),
         decoration: BoxDecoration(
           gradient: RadialGradient(
-              colors: [Color(0xffE1F1FC),Color(0xffF8F0FE)],
-              center: Alignment(0.5,-0.5)
-          ),
+              colors: [Color(0xffE1F1FC), Color(0xffF8F0FE)],
+              center: Alignment(0.5, -0.5)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,11 +185,10 @@ class _HomePageState extends State<HomePage> {
                         color: Color(0xffFBF8FF),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black12,
-                            offset: Offset(1.0,0.0),
-                            spreadRadius: 1,
-                            blurRadius: 1
-                          )
+                              color: Colors.black12,
+                              offset: Offset(1.0, 0.0),
+                              spreadRadius: 1,
+                              blurRadius: 1)
                         ],
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -219,10 +217,9 @@ class _HomePageState extends State<HomePage> {
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.black12,
-                                offset: Offset(1.0,0.0),
+                                offset: Offset(1.0, 0.0),
                                 spreadRadius: 1,
-                                blurRadius: 1
-                            )
+                                blurRadius: 1)
                           ],
                           borderRadius: BorderRadius.circular(20)),
                       child: Column(
@@ -250,10 +247,9 @@ class _HomePageState extends State<HomePage> {
                         boxShadow: [
                           BoxShadow(
                               color: Colors.black12,
-                              offset: Offset(1.0,0.0),
+                              offset: Offset(1.0, 0.0),
                               spreadRadius: 1,
-                              blurRadius: 1
-                          )
+                              blurRadius: 1)
                         ],
                         borderRadius: BorderRadius.circular(20),
                       ),

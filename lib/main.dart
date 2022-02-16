@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:zamin_muthur_ui/Screens/Login/first_screen.dart';
-import 'package:zamin_muthur_ui/test_screen.dart';
-
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitDown,
-      DeviceOrientation.portraitUp,
-    ]);
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
   SystemChrome.setEnabledSystemUIMode(
     SystemUiMode.immersive,
   );
@@ -25,7 +22,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
@@ -39,5 +35,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-

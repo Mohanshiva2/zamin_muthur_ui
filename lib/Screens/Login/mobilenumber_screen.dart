@@ -17,11 +17,10 @@ class _MobileNumberPageState extends State<MobileNumberPage> {
       backgroundColor: Color(0xffFFF2DF),
       body: Container(
         decoration: BoxDecoration(
-          gradient: RadialGradient(
-            colors: [Color(0xffE1F1FC),Color(0xffF8F0FE),],
-            center: Alignment(0.5, -0.5),
-            radius: 0.9
-          ),
+          gradient: RadialGradient(colors: [
+            Color(0xffE1F1FC),
+            Color(0xffF8F0FE),
+          ], center: Alignment(0.5, -0.5), radius: 0.9),
         ),
         padding: EdgeInsets.all(15),
         width: double.infinity,
@@ -88,7 +87,6 @@ class _MobileNumberPageState extends State<MobileNumberPage> {
             ),
             Positioned(
               child: Container(
-
                 width: size.width * 0.8,
                 height: size.height * 0.08,
                 decoration: BoxDecoration(

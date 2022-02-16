@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
 
-
 class StreetPage extends StatefulWidget {
   const StreetPage({Key? key}) : super(key: key);
 
@@ -19,9 +18,8 @@ class _StreetPageState extends State<StreetPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
-              colors: [Color(0xffE1F1FC),Color(0xffF8F0FE)],
-              center: Alignment(0.5,-0.5)
-          ),
+              colors: [Color(0xffE1F1FC), Color(0xffF8F0FE)],
+              center: Alignment(0.5, -0.5)),
         ),
         padding: EdgeInsets.all(10),
         width: double.infinity,
@@ -34,55 +32,57 @@ class _StreetPageState extends State<StreetPage> {
                     // height: size.height * 0.4,
                     // width: size.width * 0.8,
                     child: Image.asset(
-                      "assets/Vector.png",scale: 2.7,
+                      "assets/Vector.png",
+                      scale: 2.7,
                       height: size.height * 0.7,
                     ),
                   ),
                 ],
               ),
               left: size.width * 0.4,
-              right: -size.width*0.2,
-              top: -size.height*0.10,
+              right: -size.width * 0.2,
+              top: -size.height * 0.10,
             ),
             Positioned(
               child: Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Search your',style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.w400
+                    Text(
+                      'Search your',
+                      style:
+                          TextStyle(fontSize: 40, fontWeight: FontWeight.w400),
                     ),
+                    SizedBox(
+                      height: size.height * 0.02,
                     ),
-                    SizedBox(height: size.height*0.02 ,),
-                    Text('Street name',style: TextStyle(
-                        fontSize: 48,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff7434CF)
-                    ),
+                    Text(
+                      'Street name',
+                      style: TextStyle(
+                          fontSize: 48,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff7434CF)),
                     ),
                   ],
                 ),
               ),
-              top: size.height*0.20,
-              left: size.width*0.047,
-              right: size.width*0.047,
+              top: size.height * 0.20,
+              left: size.width * 0.047,
+              right: size.width * 0.047,
             ),
             Positioned(
               child: Container(
-                width: size.width*0.8,
-                height: size.height*0.08,
+                width: size.width * 0.8,
+                height: size.height * 0.08,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(40),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.black12,
-                          offset: Offset(2.0,4.0),
+                          offset: Offset(2.0, 4.0),
                           spreadRadius: 3,
-                          blurRadius: 9
-                      )
-                    ]
-                ),
+                          blurRadius: 9)
+                    ]),
                 child: Column(
                   children: [
                     TextField(
@@ -94,64 +94,57 @@ class _StreetPageState extends State<StreetPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
                             borderSide: BorderSide.none,
-                          )
-                      ),
+                          )),
                     ),
                   ],
                 ),
               ),
-              top: size.height*0.380,
-              left: size.width*0.024,
-              right: size.width*0.024,
+              top: size.height * 0.380,
+              left: size.width * 0.024,
+              right: size.width * 0.024,
             ),
-
             Positioned(
               child: Container(
-                margin: EdgeInsets.only(left: size.width*0.3),
+                margin: EdgeInsets.only(left: size.width * 0.3),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Image.asset("assets/Saly-15.png",scale: 3.5),
+                    Image.asset("assets/Saly-15.png", scale: 3.5),
                   ],
                 ),
               ),
-              top: size.height*0.55,
-              right: -size.width*0.05,
+              top: size.height * 0.55,
+              right: -size.width * 0.05,
             ),
             Positioned(
               child: GestureDetector(
-                onTap: (){
+                onTap: () {
                   setState(() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   });
                 },
                 child: Container(
-                  margin: EdgeInsets.only(top: size.height*0.196),
-                  height: size.height*0.08,
-                  width: size.width*0.6,
+                  margin: EdgeInsets.only(top: size.height * 0.196),
+                  height: size.height * 0.08,
+                  width: size.width * 0.6,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
                       gradient: LinearGradient(
-                          colors: [Color(0xff8949E9
-                          ),Color(0xff6324BB)]
-                      )
-                  ),
+                          colors: [Color(0xff8949E9), Color(0xff6324BB)])),
                   child: Center(
                     child: Text(
                       'Finish',
                       style: TextStyle(
-                          fontSize: size.height*0.03,
-                          color: Colors.white
-                      ),
+                          fontSize: size.height * 0.03, color: Colors.white),
                     ),
                   ),
                 ),
               ),
-              left: size.width*0.2,
-              right: size.width*0.2,
-              top: size.height*0.33,
+              left: size.width * 0.2,
+              right: size.width * 0.2,
+              top: size.height * 0.33,
             ),
-
           ],
         ),
       ),
