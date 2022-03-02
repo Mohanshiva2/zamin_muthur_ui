@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,7 +13,61 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final controller = PageController(keepPage: true);
+
   @override
+  final page = List.generate(
+    3,
+    (index) => Container(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      child:
+      Center(
+        child:
+        Container(
+          height: 80,
+          width: 500,
+          decoration: BoxDecoration(
+              color: Color(0xffFBF8FF),
+              borderRadius: BorderRadius.circular(20)),
+          child: Center(
+            child: Text(
+              "Lorem ipsum",
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 20,
+                color: Color(0xffBBBBBB),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+
+
+  double precent = 100;
+
+  late Timer timer;
+
+  startTimer(){
+    timer = Timer.periodic(Duration(seconds: 5), (_) {
+      setState(() {
+        precent -= 1;
+        if(precent == 0){
+          timer.cancel();
+          precent = 0.0;
+        }
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    startTimer();
+  }
+
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -85,27 +142,28 @@ class _HomePageState extends State<HomePage> {
                       ],
                     )),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CircularPercentIndicator(
-                      radius: 50,
+                      radius: 60,
                       circularStrokeCap: CircularStrokeCap.round,
                       animation: true,
-                      percent: 12 / 12,
+                      percent: 70/100,//precent/100,
                       animateFromLastPercent: true,
                       lineWidth: 10,
                       progressColor: Colors.white,
                       backgroundColor: Colors.transparent,
                       center: Text(
-                        "23\nmins",
+                        "23\nMins",
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: size.height * 0.020,
+                            fontSize: size.height * 0.016,
                             color: Colors.white),
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.only(
-                          top: size.height * 0.06, left: size.width * 0.05),
+                          top: size.height * 0.06, left: size.width * 0.03),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -137,10 +195,11 @@ class _HomePageState extends State<HomePage> {
               height: size.height * 0.02,
             ),
             Container(
-              margin: EdgeInsets.only(left: 40),
+              margin: EdgeInsets.only(left: 30),
               child: Text(
                 "Panchayat Notices",
-                style: TextStyle(fontSize: size.height * 0.02),
+                style: TextStyle(
+                    fontSize: size.height * 0.03, fontWeight: FontWeight.w500),
               ),
             ),
             SizedBox(
@@ -148,130 +207,183 @@ class _HomePageState extends State<HomePage> {
             ),
             Center(
               child: Container(
-                height: size.height * 0.08,
-                width: size.width * 0.7,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffFBF8FF)),
-                child: Center(
-                  child: Text(
-                    "Lorem ipsum",
-                    style: TextStyle(
-                      fontSize: size.height * 0.017,
-                      color: Color(0xffBBBBBB),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: size.height * 0.05,
-            ),
-            Container(
-              margin: EdgeInsets.only(left: size.width * 0.03),
-              height: size.height * 0.2,
-              width: size.width * 0.9,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                height: size.height * 0.09,
+                width: size.width * 0.9,
+                child: PageView(
+                  controller: controller,
                   children: [
                     Container(
-                      margin: EdgeInsets.all(30),
-                      padding: EdgeInsets.only(left: size.width * 0.03),
-                      height: size.height * 0.20,
-                      width: size.width * 0.3,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFBF8FF),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black12,
-                              offset: Offset(1.0, 0.0),
-                              spreadRadius: 1,
-                              blurRadius: 1)
-                        ],
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Image.asset(
-                            "assets/Vector (4).png",
-                            scale: 2.5,
+                      height: 100,
+                      width: 500,
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      child:
+                      Center(
+                        child:
+                        Container(
+                          height: 80,
+                          width: 500,
+                          decoration: BoxDecoration(
+                              color: Color(0xffFBF8FF),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              "Lorem ipsum",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: Color(0xffBBBBBB),
+                              ),
+                            ),
                           ),
-                          Text(
-                            "Call Police",
-                            style: TextStyle(fontSize: size.height * 0.015),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(30),
-                      padding: EdgeInsets.only(left: size.width * 0.03),
-                      height: size.height * 0.16,
-                      width: size.width * 0.3,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black12,
-                                offset: Offset(1.0, 0.0),
-                                spreadRadius: 1,
-                                blurRadius: 1)
-                          ],
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Image.asset(
-                            "assets/Vector (3).png",
-                            scale: 2.5,
+                      height: 100,
+                      width: 500,
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      child:
+                      Center(
+                        child:
+                        Container(
+                          height: 80,
+                          width: 500,
+                          decoration: BoxDecoration(
+                              color: Color(0xffFBF8FF),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              "Lorem ipsum",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: Color(0xffBBBBBB),
+                              ),
+                            ),
                           ),
-                          Text(
-                            "Call Ambulance",
-                            style: TextStyle(fontSize: size.height * 0.015),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(30),
-                      padding: EdgeInsets.only(left: size.width * 0.03),
-                      height: size.height * 0.16,
-                      width: size.width * 0.3,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black12,
-                              offset: Offset(1.0, 0.0),
-                              spreadRadius: 1,
-                              blurRadius: 1)
-                        ],
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Image.asset(
-                            "assets/Vector (4).png",
-                            scale: 2.5,
+                      height: 100,
+                      width: 500,
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      child:
+                      Center(
+                        child:
+                        Container(
+                          height: 80,
+                          width: 500,
+                          decoration: BoxDecoration(
+                              color: Color(0xffFBF8FF),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              "Lorem ipsum",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: Color(0xffBBBBBB),
+                              ),
+                            ),
                           ),
-                          Text(
-                            "Call Police",
-                            style: TextStyle(fontSize: size.height * 0.015),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                   ],
-                ),
+                )
               ),
             ),
+            SizedBox(
+              height: size.height * 0.01,
+            ),
+            Center(
+              child: SmoothPageIndicator(
+                controller: controller,
+                count: page.length,
+                effect: ExpandingDotsEffect(
+                    dotHeight: size.height * 0.005,
+                    dotWidth: size.width * 0.02,
+                    activeDotColor: Colors.grey.shade300,
+                    dotColor: Colors.grey.shade300),
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            Container(
+              height: size.height * 0.2,
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(30),
+
+                    height: size.height * 0.20,
+                    width: size.width * 0.3,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(1.0, 0.0),
+                            spreadRadius: 1,
+                            blurRadius: 1)
+                      ],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset(
+                          "assets/Vector (5).png",
+                          scale: 2.5,
+                          color: Color(0xff6324BB),
+                        ),
+                        Text(
+                          "Ration Store",
+                          style: TextStyle(fontSize: size.height * 0.020,fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(30),
+                    height: size.height * 0.16,
+                    width: size.width * 0.3,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(1.0, 0.0),
+                            spreadRadius: 1,
+                            blurRadius: 1,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset(
+                          "assets/Vector (6).png",
+                          scale: 2.0,
+                          color: Color(0xff6324BB),
+                        ),
+                        Text(
+                          "Bus Timing",
+                          style: TextStyle(fontSize: size.height * 0.020,fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: size.height*0.02,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -288,8 +400,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: Center(
                         child: Image.asset(
-                          'assets/Vector (5).png',
+                          'assets/Vector (4).png',
                           scale: 2.8,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -298,7 +411,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Center(
                       child: Text(
-                        "Ration Store",
+                        "Call police",
                         style: TextStyle(
                             fontSize: size.height * 0.015,
                             fontWeight: FontWeight.w600),
@@ -319,8 +432,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: Center(
                         child: Image.asset(
-                          'assets/Vector (6).png',
+                          'assets/Vector (3).png',
                           scale: 2.8,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -329,12 +443,13 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Center(
                       child: Text(
-                        "Bus timings",
+                        "Call Ambulance",
                         style: TextStyle(
-                            fontSize: size.height * 0.015,
-                            fontWeight: FontWeight.w600),
+                          fontSize: size.height * 0.015,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 Column(
@@ -355,6 +470,7 @@ class _HomePageState extends State<HomePage> {
                         child: Image.asset(
                           'assets/Vector (7).png',
                           scale: 2.8,
+                          color: Colors.white,
                         ),
                       ),
                     ),

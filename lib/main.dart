@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:zamin_muthur_ui/Screens/Login/first_screen.dart';
+import 'package:zamin_muthur_ui/Screens/Login/home_screen.dart';
 
 void main() {
+  //lock the rotation in land scape
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
+  //disable top bar in app
   SystemChrome.setEnabledSystemUIMode(
     SystemUiMode.immersive,
   );
