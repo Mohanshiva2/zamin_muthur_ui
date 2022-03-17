@@ -12,7 +12,8 @@ class PasswordPage extends StatefulWidget {
 class _PasswordPageState extends State<PasswordPage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -32,68 +33,63 @@ class _PasswordPageState extends State<PasswordPage> {
                     Text(
                       'Enter',
                       style: TextStyle(
-                          fontSize: size.height * 0.05,
-                          fontWeight: FontWeight.w400),
+                          fontSize: height * 0.05, fontWeight: FontWeight.w400),
                     ),
                     SizedBox(
-                      height: size.height * 0.01,
+                      height: height * 0.01,
                     ),
                     Text(
                       'One time passsword',
                       style: TextStyle(
-                          fontSize: size.height * 0.045,
+                          fontSize: height * 0.045,
                           fontWeight: FontWeight.w800,
                           color: Color(0xff7434CF)),
                     ),
                   ],
                 ),
               ),
-              top: size.height * 0.188,
-              left: size.width*0.039,
-              right: size.width*0.039,
+              top: height * 0.130,
+              left: width * 0.039,
+              right: width * 0.039,
             ),
-
-
             Positioned(
               child: Container(
-                margin: EdgeInsets.only(top: size.height*0.4,),
-                width: size.width * 0.8,
-                height: size.height * 0.08,
+                margin: EdgeInsets.only(
+                  top: height * 0.4,
+                ),
+                width: width * 0.8,
+                height: height * 0.08,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(40),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.black12,
-                          offset: Offset(2.0,4.0),
+                          offset: Offset(2.0, 4.0),
                           spreadRadius: 3,
-                          blurRadius: 9
-                      )
-                    ]
-                ),
+                          blurRadius: 9)
+                    ]),
                 child: Column(
                   children: [
                     TextField(
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(20),
-                          hintText: 'One time Password',
-                          filled: true,
-                          fillColor: Color(0xffFBF8FF),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(40),
-                            borderSide: BorderSide.none,
-                          ),
+                        contentPadding: EdgeInsets.all(20),
+                        hintText: 'One time Password',
+                        filled: true,
+                        fillColor: Color(0xffFBF8FF),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: BorderSide.none,
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              left: size.width*0.024,
-              right: size.width*0.024,
-              top: -size.height*0.0120,
+              left: width * 0.024,
+              right: width * 0.024,
+              top: -height * 0.0120,
             ),
-
-
             Positioned(
               child: Center(
                 child: Column(
@@ -106,8 +102,7 @@ class _PasswordPageState extends State<PasswordPage> {
                   ],
                 ),
               ),
-              top: size.height*0.55,
-
+              top: height * 0.55,
             ),
             Positioned(
               child: GestureDetector(
@@ -118,9 +113,9 @@ class _PasswordPageState extends State<PasswordPage> {
                   });
                 },
                 child: Container(
-                  margin: EdgeInsets.only(top: size.height * 0.2),
-                  height: size.height * 0.08,
-                  width: size.width * 0.6,
+                  margin: EdgeInsets.only(top: height * 0.2),
+                  height: height * 0.07,
+                  width: width * 0.6,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
                       gradient: LinearGradient(
@@ -129,16 +124,14 @@ class _PasswordPageState extends State<PasswordPage> {
                     child: Text(
                       'Next',
                       style: TextStyle(
-                          fontSize: size.height * 0.03, color: Colors.white),
+                          fontSize: height * 0.03, color: Colors.white),
                     ),
                   ),
                 ),
               ),
-              left: size.width*0.2,
-              right: size.width*0.2,
-              top: size.height*0.33,
-
-
+              left: width * 0.2,
+              right: width * 0.2,
+              top: height * 0.33,
             ),
           ],
         ),
